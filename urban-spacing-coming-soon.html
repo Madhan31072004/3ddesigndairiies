@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Spacing - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f7f3e9;
+            font-family: 'Indie Flower', cursive;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: repeating-linear-gradient(90deg, #f7f3e9 0px, #f7f3e9 30px, #ece7d8 31px, #ece7d8 32px);
+        }
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.98);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 1.5px 0 #e2dfd2;
+            backdrop-filter: blur(1.5px);
+            padding: 32px 24px;
+            position: relative;
+            width: 95vw;
+            box-sizing: border-box;
+        }
+        .title {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 0.2em;
+            letter-spacing: 2px;
+            word-break: break-word;
+            color: #222;
+            text-shadow: 1px 2px 8px #ece7d8;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.1em;
+            color: #888;
+            margin-bottom: 1.2em;
+        }
+        .progress-section {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+        .progress-label {
+            font-size: 1.1em;
+            margin-bottom: 0.5em;
+        }
+        .progress-bar {
+            width: 100%;
+            background: #e2dfd2;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #ece7d8;
+            overflow: hidden;
+            height: 36px;
+            margin-bottom: 0.5em;
+            border: 2px solid #bdb7a2;
+            position: relative;
+        }
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #bdb7a2 0%, #e2dfd2 100%);
+            width: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            color: #222;
+            font-family: 'Permanent Marker', cursive;
+            transition: width 1s;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .stay-tuned {
+            color: #1a7ed6;
+            font-size: 1.3em;
+            font-family: 'Permanent Marker', cursive;
+            margin-bottom: 0.2em;
+        }
+        .new-design {
+            color: #1a7ed6;
+            font-size: 1.1em;
+            margin-bottom: 0.8em;
+        }
+        .contact-section {
+            text-align: center;
+            margin-top: 1.5em;
+        }
+        .contact-label {
+            font-size: 1.1em;
+            margin-bottom: 0.7em;
+        }
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 1em;
+        }
+        .social-icons a {
+            display: inline-flex;
+            width: 38px;
+            height: 38px;
+            background: #f7f3e9;
+            border-radius: 8px;
+            border: 1.5px solid #bdb7a2;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .social-icons a:hover {
+            background: #e2dfd2;
+        }
+        .social-icons svg {
+            width: 22px;
+            height: 22px;
+            fill: #222;
+        }
+        .notify-form {
+            margin-bottom: 1em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .notify-form input {
+            flex: 1 1 180px;
+            min-width: 120px;
+            max-width: 250px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1.5px solid #bdb7a2;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        .notify-form button {
+            padding: 8px 18px;
+            border-radius: 6px;
+            border: none;
+            background: linear-gradient(90deg, #1a7ed6 0%, #bdb7a2 100%);
+            color: #fff;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px #ece7d8;
+        }
+        .notify-form button:hover {
+            background: linear-gradient(90deg, #bdb7a2 0%, #1a7ed6 100%);
+            box-shadow: 0 4px 16px #ece7d8;
+        }
+        .contact-email {
+            margin-top: 1em;
+            font-size: 1em;
+            color: #1a7ed6;
+            text-align: center;
+            word-break: break-all;
+            background: #f7f3e9;
+            border-radius: 8px;
+            padding: 6px 0;
+            box-shadow: 0 1px 4px #ece7d8;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px 2vw;
+                max-width: 98vw;
+            }
+            .title {
+                font-size: 1.3em;
+            }
+            .progress-bar {
+                height: 28px;
+            }
+            .progress {
+                font-size: 1em;
+            }
+            .notify-form input {
+                max-width: 140px;
+                font-size: 0.95em;
+            }
+            .notify-form button {
+                font-size: 0.95em;
+                padding: 7px 12px;
+            }
+            .social-icons a {
+                width: 32px;
+                height: 32px;
+            }
+            .social-icons svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        @media (max-width: 400px) {
+            .container {
+                padding: 4px 1vw;
+            }
+            .title {
+                font-size: 1em;
+            }
+            .progress-bar {
+                height: 22px;
+            }
+            .progress {
+                font-size: 0.8em;
+            }
+        }
+        /* Decorative corner doodle */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            width: 48px;
+            height: 48px;
+            background: url('https://cdn.pixabay.com/photo/2013/07/12/15/55/pencil-150568_1280.png') no-repeat center/contain;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: -18px;
+            width: 48px;
+            height: 48px;
+            background: url('https://cdn.pixabay.com/photo/2013/07/12/15/55/pencil-150568_1280.png') no-repeat center/contain;
+            opacity: 0.12;
+            pointer-events: none;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">ARUN DESIGNS</div>
+        <div class="subtitle">DEFINE | DESIGN | DELIVER</div>
+        <div class="progress-section">
+            <div class="stay-tuned">Stay <span style="font-family:'Indie Flower',cursive;">Tuned.</span></div>
+            <div class="new-design">New Design in Progress.</div>
+            <div class="progress-label">Work in progress so far…</div>
+            <div class="progress-bar">
+                <div class="progress" id="progress-bar" style="width:0%;">0%</div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <div class="contact-label">Contact Us</div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/3d_design_diariies?igsh=MzRpc3UzejV3b2t1" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.974-1.246-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.975 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.012-4.947.072-1.276.06-2.687.334-3.678 1.325-.991.991-1.265 2.402-1.325 3.678-.06 1.28-.072 1.688-.072 4.947s.012 3.667.072 4.947c.06 1.276.334 2.687 1.325 3.678.991.991 2.402 1.265 3.678 1.325 1.28.06 1.688.072 4.947.072s3.667-.012 4.947-.072c1.276-.06 2.687-.334 3.678-1.325.991-.991 1.265-2.402 1.325-3.678.06-1.28.072-1.688.072-4.947s-.012-3.667-.072-4.947c-.06-1.276-.334-2.687-1.325-3.678-.991-.991-2.402-1.265-3.678-1.325-1.28-.06-1.688-.072-4.947-.072zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a>
+                <!-- <a href="#" title="YouTube" style="opacity:0.4;pointer-events:none;"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.112c-1.863-.502-9.386-.502-9.386-.502s-7.523 0-9.386.502a2.994 2.994 0 0 0-2.112 2.112c-.502 1.863-.502 5.754-.502 5.754s0 3.891.502 5.754a2.994 2.994 0 0 0 2.112 2.112c1.863.502 9.386.502 9.386.502s7.523 0 9.386-.502a2.994 2.994 0 0 0 2.112-2.112c.502-1.863.502-5.754.502-5.754s0-3.891-.502-5.754zm-13.498 9.314v-6l6 3-6 3z"/></svg></a>
+                <a href="#" title="Facebook" style="opacity:0.4;pointer-events:none;"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.325v21.351c0 .733.592 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.771c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.312h3.587l-.467 3.622h-3.12v9.294h6.116c.733 0 1.325-.591 1.325-1.324v-21.351c0-.733-.592-1.325-1.325-1.325z"/></svg></a> -->
+                <a href="https://wa.me/8498997856" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.07.25C6.13.25 1.07 5.31 1.07 11.25c0 2.01.53 3.97 1.54 5.7L.25 23.75l7.01-2.29a11.8 11.8 0 0 0 4.81 1.04c5.94 0 11-5.06 11-11 0-2.97-1.16-5.76-3.3-7.98zm-8.45 18.02c-1.56 0-3.09-.3-4.52-.89l-.32-.13-4.16 1.36 1.36-4.05-.21-.33a9.97 9.97 0 0 1-1.48-5.32c0-5.51 4.48-9.99 9.99-9.99 2.67 0 5.18 1.04 7.07 2.93a9.97 9.97 0 0 1 2.93 7.07c0 5.51-4.48 9.99-9.99 9.99zm5.13-7.13c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.41-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.18.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.36-.26.29-1 1.01-1 2.46s1.03 2.85 1.18 3.05c.15.2 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.11-.25-.18-.53-.32z"/></svg></a>
+                <a href="mailto:3ddesigndiariies@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M12 13.065l-11.99-7.065v14h23.98v-14l-11.99 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg></a>
+            </div>
+            <form class="notify-form">
+                <input type="email" placeholder="Type your email address" required name="email">
+                <button type="submit">Notify Me</button>
+            </form>
+            <div class="contact-email">
+                <svg style="vertical-align:middle;width:18px;height:18px;fill:#1a7ed6;margin-right:4px;" viewBox="0 0 24 24"><path d="M12 13.065l-11.99-7.065v14h23.98v-14l-11.99 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg>
+                3ddesigndiariies@gmail.com
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+// Live animated progress bar
+let progress = 0;
+const target = 90;
+const bar = document.getElementById('progress-bar');
+function animateBar() {
+  if (progress < target) {
+    progress++;
+    bar.style.width = progress + '%';
+    bar.textContent = progress + '%';
+    setTimeout(animateBar, 20);
+  } else {
+    bar.style.width = target + '%';
+    bar.textContent = target + '%';
+  }
+}
+document.addEventListener('DOMContentLoaded', animateBar);
+</script>
+</html>
